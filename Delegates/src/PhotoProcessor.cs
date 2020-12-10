@@ -1,3 +1,5 @@
+using System;
+
 namespace Delegates
 {
     // Is part of the framework
@@ -22,9 +24,11 @@ namespace Delegates
         
         // In this approach the PhotoProcessor gets all the filters to be applied as a method parameter 
 
-        public delegate void PhotoFilterHandler(Photo photo);
+        // public delegate void PhotoFilterHandler(Photo photo);
+        // public void Process(string path,PhotoFilterHandler photoFilterHandler)
 
-        public void Process(string path, PhotoFilterHandler photoFilterHandler)
+
+        public void Process(string path, Action<Photo> photoFilterHandler)
         {
             var photo = Photo.Load(path);
             
