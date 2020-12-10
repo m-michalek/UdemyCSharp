@@ -5,14 +5,14 @@ namespace DesignAWorkflowEngine
 {
     public class WorkflowEngine
     {
-        private readonly List<List<IActivity>> _workflows = new List<List<IActivity>>();
+        private readonly List<Workflow> _workflows = new List<Workflow>();
         public void Run()
         {
             foreach (var workflow in _workflows)
             {
                 Console.WriteLine("Running workflow:");
                 
-                foreach (var activity in workflow)
+                foreach (var activity in workflow.Activities)
                 {
                     activity.Run();   
                 }
@@ -21,9 +21,9 @@ namespace DesignAWorkflowEngine
             }
         }
 
-        public void RegisterWorkflow(List<IActivity> activities)
+        public void RegisterWorkflow(Workflow workflow)
         {
-            _workflows.Add(activities);
+            _workflows.Add(workflow);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 
 namespace DesignAWorkflowEngine
 {
@@ -9,18 +8,24 @@ namespace DesignAWorkflowEngine
         {
             var workflowEngine = new WorkflowEngine();
 
-            workflowEngine.RegisterWorkflow(new List<IActivity>
+            workflowEngine.RegisterWorkflow(new Workflow
                 {
-                    new UploadVideoActivity(),
-                    new CallWebserviceActivity(),
-                    new SendMailActivity(),
-                    new ChangeVideoStatusActivity()
+                    Activities = new List<IActivity>
+                    {
+                        new UploadVideoActivity(),
+                        new CallWebserviceActivity(),
+                        new SendMailActivity(),
+                        new ChangeVideoStatusActivity()
+                    }
                 }
             );
-            workflowEngine.RegisterWorkflow(new List<IActivity>
+            workflowEngine.RegisterWorkflow(new Workflow
                 {
-                    new UploadVideoActivity(),
-                    new CallWebserviceActivity()
+                    Activities = new List<IActivity>
+                    {
+                        new UploadVideoActivity(),
+                        new ChangeVideoStatusActivity()
+                    }
                 }
             );
 
