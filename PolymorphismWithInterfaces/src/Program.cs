@@ -13,7 +13,7 @@ namespace PolymorphismWithInterfaces
             var videoEncoder = new VideoEncoder();
             
             // Register notification channels
-            videoEncoder.RegisterNotificationChannel(new MailChannel());
+            videoEncoder.RegisterNotificationChannel(new MailNotificationChannel());
             videoEncoder.RegisterNotificationChannel(new SmsChannel());
             
             // Encode the video

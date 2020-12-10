@@ -2,7 +2,7 @@ using System;
 
 namespace PolymorphismWithInterfaces
 {
-    public class MailChannel : INotificationChannel
+    public class MailNotificationChannel : INotificationChannel
     {
         public void Send(Message message)
         {

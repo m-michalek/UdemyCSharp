@@ -25,7 +25,7 @@ namespace PolymorphismWithInterfaces
     {
         // List<INotificationChannel> in this case means, the list has to consist out of classes which implement the
         // interface INotificationChannel. This is an example of loosely coupled relation ship because we dont say
-        // it has to be a specific notification channel like MailChannel. Similar to the chef example we would say we 
+        // it has to be a specific notification channel like MailNotificationChannel. Similar to the chef example we would say we 
         // want a chef with x and y capabilities instead of saying we want John.
         // We also make use of polymorphism because we have different implementations/behavior depending of the class
         // which implements the interface INotificationChannel.
