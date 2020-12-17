@@ -4,23 +4,27 @@ namespace Events
 {
     public class VideoEncoder
     {
-        public event EventHandler VideoEncoded;
+        public event EventHandler<VideoEventArgs> VideoEncoded;
+        public event EventHandler VideoEncodedWithoutArguments;
 
         public void Encode(Video video)
         {
             Console.WriteLine("[VideoEncoder] Encoding video...");
 
-            OnVideoEoncoded();
+            OnVideoEncoded(video);
+            OnVideoEncodedWithoutArguments();
         }
 
-        public void OnVideoEoncoded()
+        public void OnVideoEncoded(Video video)
         {
             if (VideoEncoded != null)
-                VideoEncoded(this, EventArgs.Empty);
+                VideoEncoded(this, new VideoEventArgs{Video = video});
         }
-    }
 
-    public class Video
-    {
+        public void OnVideoEncodedWithoutArguments()
+        {
+            if (VideoEncodedWithoutArguments != null)
+                VideoEncodedWithoutArguments(this, EventArgs.Empty);
+        }
     }
 }
