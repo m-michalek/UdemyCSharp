@@ -4,6 +4,7 @@ namespace Events
 {
     public class VideoEncoder
     {
+        // An alternative would be to define custom delegates but this approach is much simpler
         public event EventHandler<VideoEventArgs> VideoEncoded;
         public event EventHandler VideoEncodedWithoutArguments;
 
@@ -11,6 +12,7 @@ namespace Events
         {
             Console.WriteLine("[VideoEncoder] Encoding video...");
 
+            // Raise event
             OnVideoEncoded(video);
             OnVideoEncodedWithoutArguments();
         }
