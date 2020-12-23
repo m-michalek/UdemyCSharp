@@ -1,9 +1,0 @@
-# Setup 
-
-## Database:
-
-- Download and run myscql server in docker container:
-
-```
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=<sql-user-password>!234' -p 1433:1433 -v </path/to/db/directory>/data:/var/opt/mssql/data -v </path/to/db/directory>/log:/var/opt/mssql/log -v </path/to/db/directory>/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2019-latest
-```
